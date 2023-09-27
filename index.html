@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" >
+    <title>NurMahsereci</title>
+  </head>
+  <body class="bg-dark">
+    <div class="text-center">
+      
+      <div class="text1 text-center">
+        Hello, <strong><span id="myName"></span></strong>! Welcome!
+      </div>
+      <div id="myClock" class="clock" onload="showTime()"></div>
+      <div class="text2 text-center">
+        <strong>It's my first JavaScript homework.</strong>
+        <p>I'm really happy to achieve this.</p>
+      </div>
+    </div>
+    <script>
+        let name  = prompt("Please write your name")
+    document.getElementById("myName").innerText=`${name}`
+
+
+    function timer(){
+    let myClock = document.getElementById("myClock"); 
+    var now = new Date(); 
+    var day = now.getDay()
+    let days= ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    day = days[day];
+    var hour = now.getHours().toString().padStart(2, "0"); 
+    var minute = now.getMinutes().toString().padStart(2, "0"); 
+    var second = now.getSeconds().toString().padStart(2, "0"); 
+    var time = hour + ":" + minute + ":" + second +" "+ day;
+
+    myClock.innerHTML = time
+
+
+    }
+    setInterval(timer, 1000);
+    </script>
+  </body>
+</html>
